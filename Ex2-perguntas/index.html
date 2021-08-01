@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas</title>
+</head>
+<body>
+    <script>
+        let nome = window.prompt('Qual é o seu nome?'); // Definir a variavel pelo o que o usuário digitar
+        window.alert('Olá,' + nome + '! seja bem-vindo'); // Mostrar para o usuário a mensagem com o nome dele
+
+        // Perguntas de verdadeiro ou falso
+        let calculo = window.prompt('quanto é 1+1?');
+        if (calculo == 2)
+        {
+            window.alert('você acertou ' + nome + '! 1 + 1 = 2');
+        }
+        else
+        {
+            window.alert(`você errou ${nome}! 1 + 1 não é igual a: ${calculo}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterção de Document</title>
+</head>
+<body>
+    <script>
+        let nome = window.prompt('Qual é o seu nome?');
+        document.write(`Olá, ${nome}, seu nome tem ${nome.length} letras.`); //variavel.length mostrará quantos caracteres tem essa variavel
+        document.writeln(`Seu nome em letras maiúsculas é ${nome.toUpperCase()}`); // WriteLn na linha abaixo
+        document.writeln(`Seu nome em minusculas é ${nome.toLocaleLowerCase()}`);
+
+        let num = window.prompt('Escreva um numero com ponto');
+        document.writeln(`numero escrito: ${num.replace('.',',')}`); //adicionará mais numeros depois da virgula
+    </script>
+</body>
+</html>

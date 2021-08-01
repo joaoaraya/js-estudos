@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Interagindo com o usuário</h1>
+    <p>Primeiro texto<br></p>
+    <p><strong>Segundo</strong> texto<br></p>
+    <p id='terceiro'>Terceiro <strong>texto</strong><br></p>
+    <div class ='quarto'>Clique Aqui</div>
+
+    <script>
+        /*
+        DOM siginifica: Document Object Model (Modelo de objeto em documento)
+
+        1. O DOM segue uma hierarquia de parentes:
+                                WINDOW
+                   location    document    history
+                              head   body
+                      meta / title   h1 / p / div /
+                                        strong        
+        */
+        let p1 = document.getElementsByTagName('p') // essa variavel serve para sempre pegar o dado dessa parte do html (primeiro 'p')
+
+        // p1 é a document e [x] é qual o paragrafo
+        document.write(p1[0].innerHTML); // PEGA TODAS AS TAGS + TEXTO DENTRO DE <P>
+        document.write(p1[1].innerText); // PEGA APENAS O TEXTO
+        
+        // pegar dados do ID
+        let paragrafo = document.getElementById('terceiro');
+        document.write(paragrafo.innerHTML);
+
+        // Melhor forma de usar o ID e Class
+        let exId = document.querySelector('p#terceiro'); // ID usado apenas em 1 elemento
+        let exClass = document.querySelector('div.quarto'); // Class usado em multiplos objetos
+
+        exId.style.color = 'red';
+        exClass.style.fontSize = '2em';
+
+        // Exemplos de estilo
+        document.body.style.background = 'black';
+        document.body.style.color = 'white';
+     </script>
+</body>
+</html>

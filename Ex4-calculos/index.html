@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos</title>
+</head>
+<body>
+    <h1>Cálculos</h1>
+    <script>
+        // Converter para numero Int (1) ou Float (1.1) antes de armazenar a variavel como string (texto)
+        let num1 = Number.parseFloat(window.prompt("Digite o 1º valor: "));
+        let num2 = Number.parseFloat(window.prompt("Digite o 2º valor: "));
+
+        // Cálculos
+        let soma = num1 + num2;
+        document.write(`${num1} + ${num2} = ${soma} <br>`);
+        let sub = num1 - num2;
+        document.write(`${num1} - ${num2} = ${sub} <br>`);
+        let multi = num1 * num2;
+        document.write(`${num1} x ${num2} = ${multi} <br>`);
+        let divi = num1 / num2;
+        document.write(`${num1} : ${num2} = ${divi} <br>`);
+
+        // Teste ternário (Definir = if 'ex: soma > 2' ? se for true (1) : false (2))
+        let valor = num1 > num2 ? 'maior' : 'menor';
+        document.write(`${num1} é ${valor} que ${num2}`);
+    </script>
+</body>
+</html>

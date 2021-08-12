@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idades</title>
+</head>
+<body>
+    <h1>Quantos anos?</h1>
+    <div>Ano de nascimento: 
+        <input type="number" name="ano" id="ano" placeholder="Digite o ano">
+    </div>
+    <br>
+    <div>
+        Sexo:
+        <input type="radio" name="sexo" id="masc">
+        <label for="masc">Masculino</label>   
+        <input type="radio" name="sexo" id="fem">
+        <label for="fem">Feminino</label>
+    </div>
+    <br>
+    <div>
+        <input type="button" value="checar" onclick="calcular()">
+    </div>
+    <div id='res'></div>
+
+    <script>
+        function calcular ()
+        {
+            let vAno = document.querySelector('input#ano');
+            let data = new Date();
+            let vAnoAtual = data.getFullYear();
+            let vSexo = document.getElementsByName('sexo');
+            let vGenero = "";
+            let vRes = document.querySelector('div#res');
+
+            // Calculo do ano atual menos o de nascimento dará sua idade
+            let vIdade = vAnoAtual - Number(vAno.value);
+
+            /* Checagem se está marcado em masc. ou fem. 
+            (A ordem das inputs radio são classificadas em arrays [])*/
+            if (vSexo[0].checked)
+            {
+                vGenero = "homem";
+            }
+            else if (vSexo[1].checked)
+            {
+                vGenero = "mulher"
+            }
+
+            // Mostrar resultados SE o ano for valido
+            if (vAno.value.length == 0 || Number(vAno.value) > vAnoAtual 
+                || Number(vAno.value) < vAnoAtual-120)
+            {
+                window.alert ('Ano invalido!');
+            }
+            else
+            {
+                vRes.innerHTML = `<p>Você é um(a) ${vGenero} de ${vIdade} ano(s)</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

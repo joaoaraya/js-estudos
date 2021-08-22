@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições</title>
+</head>
+<body>
+    <h1>Quantas vezes você gostaria de dizer...</h1>
+    <div>
+        <input type="text" name="dizer" id="dizer" placeholder="Digite a frase">
+        <input type="number" name="vezes" id="vezes" placeholder="Digite o nº de vezes">
+        <input type="button" value="ok" onclick="dizer()">
+    </div>
+    <div id='frases'></div>
+
+    <script>
+        function dizer()
+        {
+            // --- Definir Valores ---
+            // Definir 'frase' do elemento input do id dizer, apenas o valor
+            let frase = document.querySelector('input#dizer').value;
+            // Definir 'repetições' o **número** do elemento input do id vezes, apenas o valor
+            let repeticoes = Number(document.querySelector('input#vezes').value);
+            // Definir 'novasFrases' com o elemento id frases
+            let novasFrases = document.querySelector('div#frases');
+
+            novasFrases.innerHTML = ""; //Limpar parágrafos do elemento 'Frases'
+
+            // Quantas vezes repetir o código? (enquanto for maior que 0)
+            while(repeticoes > 0)
+            {
+                novasFrases.innerHTML += `<p>${repeticoes} - ${frase}</p>`; //Elememto > adicionar o HTML ..
+                repeticoes--; //Diminiuir 1 numero a cada repetição
+            }
+        }
+    </script>
+</body>
+</html>
